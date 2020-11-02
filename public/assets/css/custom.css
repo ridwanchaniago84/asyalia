@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+.text-pink-1 {
+    color: #f3b8bf;
+}
+
+.text-pink-2 {
+    color: #d47283;
+}
+
+.bg-pink-1 {
+    background-color: #f3b8bf;
+}
+
+.bg-pink-2 {
+    background-color: #d47283;
+}
+
+.bg-pink {
+    background-color: #fef2f3;
+}
+
+.text-noto {
+    font-family: 'Noto Serif', serif;
+    font-weight: 400;
+}
+
+.text-noto-bold {
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+}
+
+/* BTN */
+.btn-pink-1 {
+    color: #fff;
+    background-color: #f3b8bf;
+    border-color: #f3b8bf;
+}
+
+.btn-pink-2 {
+    color: rgba(0, 0, 0, 0.5);;
+    background-color: #d47283;
+    border-color: #d47283;
+}
+
+.btn-outline-pink-1 {
+    color: #f3b8bf;
+    border-color: #f3b8bf;
+}
+
+.btn-outline-pink-2 {
+    color: #d47283;
+    border-color: #d47283;
+}
+
+/* OWL CSS */
+
+.owl-carousel .item {
+    position: relative;
+    z-index: 100; 
+  }
+  
+  /* end fix */
+
+.owl-nav>button>i{
+    color: #d47283;
+    font-size: 32px;
+    background-color: none !important;
+    outline:none;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: none;
+}
+
+.owl-nav>button:hover{
+    background-color: none !important;
+}
+
+.owl-nav>button>i:focus{
+    outline:none;
+}
+
+.owl-nav {
+    margin: 0px !important;
+}
+
+.owl-nav .owl-prev {
+    position: absolute;
+    left: -25px;
+    top: 20px;
+  }
+  
+
+  .owl-nav .owl-next {
+    position: absolute;
+    right: -25px;
+    top: 20px;
+  }
+
+  #sliderFix{
+    position: absolute;
+  }
+
+  /* On Scroll Fixed */
+  .fixed-slider{
+    position: fixed !important;
+    /* bottom: 60px; */
+    bottom: 0px;
+    z-index: 100;
+    animation: smoothScroll 1.2s forwards;
+  }
+
+  @keyframes smoothScroll {
+        0% {
+            transform: translateY(-40px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+  /* Custom Image Checkbox */
+
+  .checkboxImg {
+    list-style-type: none;
+  }
+  
+  .checkboxImg li {
+    display: inline-block;
+  }
+  
+  .checkboxImg input[type="checkbox"] {
+    display: none;
+  }
+  
+  .checkboxImg label {
+    border-radius: .600rem;
+    display: block;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    background-color: white;
+    border: 4px solid #ececec !important;
+  }
+  
+  .checkboxImg label .imgcheckbox {
+    z-index: 1;
+    height: 100px;
+    width: 100px;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+  }
+
+  .checkboxImg :checked + label {
+    border: 4px solid #05c801 !important;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+    transition-duration: 0.2s;
+  }
+  
+  .checkboxImg :checked {
+    transform: scale(0.95);
+    /* box-shadow: 0 0 5px #333; */
+    z-index: -1;
+  }
+
+  /* RESPONSIVE */
+
+  section{
+    height: fit-content;
+    min-height: 600px;
+  }
