@@ -1,13 +1,13 @@
 var wrap = $("#sliderFix");
 
-wrap.on("scroll", function(e) {
-    
+wrap.on("scroll", function (e) {
+
   if (this.scrollTop > 100) {
     wrap.addClass("fixed-slider");
   } else {
     wrap.removeClass("fixed-slider");
   }
-  
+
 });
 
 // var header = $("#sliderFix");
@@ -86,7 +86,7 @@ wrap.on("scroll", function(e) {
 // });
 
 // var $w = $(window).scroll(function(){
-  
+
 //     if ( $w.scrollTop() < dressSec ) {   
 //       $("#nextButton").click(function (){
 //         $('html, body').stop(true, false).animate({
@@ -120,28 +120,35 @@ wrap.on("scroll", function(e) {
 // });
 
 // Single Checkbox
-$('input[type="checkbox"]').on('change', function() {
+
+let elementBTN = document.querySelector('.btnNext');
+
+$('.dropdown-item').click(() => {
+  elementBTN.removeAttribute('disabled');
+})
+
+$('input[type="checkbox"]').on('change', function () {
   $('input[name="' + this.name + '"]').not(this).prop('checked', false);
 });
 
-$('.btnNext').click(function() {
-  $.each($('input[name="dressCheck"]:checked'), function(){
+$('.btnNext').click(function () {
+  $.each($('input[name="dressCheck"]:checked'), function () {
     var brandId = $(this).val()
     localStorage.setItem('brandId', brandId);
     $.ajax({
       url: '/type/' + brandId,
       type: 'get',
-      data: { _token : $('#token').val() },
-      success: function(data){
+      data: { _token: $('#token').val() },
+      success: function (data) {
         $('#dataSec').html(data)
-        $('.nav-tabs .active').parent().next('li').find('a').removeClass('disabled').trigger('click')
-
+        $('.nav-tabs .active').parent().next('li').find('a').removeClass('disabled').trigger('click');
         $.ajax({
           url: '/sections/' + brandId,
           type: 'get',
-          data: { _token : $('#token').val() },
-          success: function(result){
-            console.log(result)
+          data: { _token: $('#token').val() },
+          success: function (result) {
+            console.log(result);
+            elementBTN.setAttribute('disabled', '');
           }
         });
       }
@@ -149,6 +156,6 @@ $('.btnNext').click(function() {
   });
 });
 
-$('.btnPrevious').click(function() {
+$('.btnPrevious').click(function () {
   $('.nav-tabs .active').parent().prev('li').find('a').trigger('click');
 });
